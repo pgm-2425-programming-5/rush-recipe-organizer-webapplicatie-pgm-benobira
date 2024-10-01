@@ -29,8 +29,8 @@ export default function ReceptenPagina() {
       localStorage.setItem('recipes', JSON.stringify(updatedRecipes));
     };
   
-    const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-      setFilteredCategory(e.target.value);
+    const handleFilterChange = (category: string) => {
+      setFilteredCategory(category);
     };
   
     const filteredRecipes = filteredCategory === 'Alle' 
@@ -43,10 +43,10 @@ export default function ReceptenPagina() {
         <AddRecipe />
         
         <FilterRecipes 
-                categories={categories} 
-                selectedCategory={filteredCategory} 
-                onFilterChange={handleFilterChange}
-            />
+          categories={categories} 
+          selectedCategory={filteredCategory}
+          onFilterChange={handleFilterChange}
+        />
 
         <div className="mt-8 space-y-8">
           {filteredRecipes.length > 0 ? (

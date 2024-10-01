@@ -1,3 +1,5 @@
+import styles from './styles/AddRecipe.module.css';
+import Button from '../common/Button';
 import { useState } from 'react';
 
 type RecipeCategory = 'Ontbijt' | 'Lunch' | 'Diner' | 'Dessert';
@@ -36,7 +38,7 @@ export default function AddRecipe() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 border rounded-lg shadow-md">
+    <form onSubmit={handleSubmit} className={`${styles.recipeform} + space-y-4 p-4 border rounded-lg shadow-md`}>
       <h2 className="text-2xl font-semibold">Recept Toevoegen</h2>
       
       <div>
@@ -87,12 +89,9 @@ export default function AddRecipe() {
         </select>
       </div>
 
-      <button
-        type="submit"
-        className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-700"
-      >
+      <Button type="submit">
         Voeg Recept Toe
-      </button>
+      </Button>
     </form>
   );
 }

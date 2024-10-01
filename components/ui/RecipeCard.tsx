@@ -1,4 +1,4 @@
-import React from 'react';
+import Button from '../common/Button';
 
 type RecipeProps = {
   name: string;
@@ -8,7 +8,6 @@ type RecipeProps = {
   onDelete: () => void; // New prop for the delete function
 };
 
-// Rewrite the RecipeCard component using the export default function syntax
 export default function RecipeCard({
   name,
   ingredients,
@@ -28,12 +27,12 @@ export default function RecipeCard({
       </ul>
       <h3 className="mt-4 font-semibold">Bereidingsinstructies:</h3>
       <p className="text-gray-700 mt-2">{instructions}</p>
-      <button
+      <Button
         onClick={onDelete}
-        className="mt-4 bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-700"
+        color= 'red'
       >
         Verwijder
-      </button>
+      </Button>
     </div>
   );
 }
